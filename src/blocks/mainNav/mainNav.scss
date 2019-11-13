@@ -1,0 +1,127 @@
+.mainNav {
+  max-width: $width-mobile-container;
+  margin: 0 auto;
+  padding-top: $padding-mobile;
+  padding-bottom: $padding-mobile;
+
+  @media (min-width: $width-mobile-album) {
+    max-width: $width-mobile-album-container;
+    
+  }
+
+  @media (min-width: $width-tablet) {
+    max-width: $width-tablet-container;
+    
+  }
+
+  @media (min-width: $width-tablet-album) {
+    max-width: $width-tablet-album-container;
+    
+  }
+
+  @media (min-width: $width-desktop) {
+    max-width: $width-desktop-container;
+    
+  }
+}
+
+.mainNav__list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainNav__item {
+  color: $white;
+}
+
+.mainNav__item--logo {
+  width: 73px;
+  height: 88px;
+
+  @media (min-width: $width-tablet-album) {
+    width: 124px;
+    height: 150px;
+    margin-right: auto;
+    
+  }
+}
+
+.mainNav__item--mobile {
+  display: none;
+
+  @media (min-width: $width-tablet-album) {
+    display: flex;
+    
+  }
+}
+
+.mainNav__item--wide {
+  @media (min-width: $width-tablet-album) {
+    padding-left: 30px;
+    
+  }
+}
+
+.mainNav__item--burger {
+  padding: $padding-mobile;
+}
+
+.mainNav__link {
+  color: $white;
+  text-decoration: none;
+  font-size: $text-mobile-font;
+  line-height: $text-mobile-line;
+
+  @media (min-width: $width-tablet) {
+    
+  }
+
+  @media (min-width: $width-tablet-album) {
+    padding-left: 20px;
+    
+  }
+}
+
+.mainNav__link--phone {
+  text-decoration: underline;
+
+  @media (min-width: $width-tablet-album) {
+    // padding-left: 60px;
+    
+  }
+}
+
+.mainNav__burger {
+  position: relative;
+  content: '';
+  width: 30px;
+  height: 2px;
+  background-color: $main-action-color;
+
+  @media (min-width: $width-tablet-album) {
+    display: none;
+    
+  }
+}
+
+.mainNav__burger::before,
+.mainNav__burger::after {
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 2px;
+  z-index: 2;
+  background-color: $main-action-color;
+}
+
+.mainNav__burger::before {
+  top: -7px;
+}
+
+.mainNav__burger::after {
+  top: 7px;
+}

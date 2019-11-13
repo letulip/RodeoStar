@@ -1,0 +1,35 @@
+.button {
+  cursor: pointer;
+  width: 175px;
+  min-width: 175px;
+  height: 42px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $width-desktop) {
+    width: 200px;
+  }
+}
+
+.button--ghost {
+  border: 2px solid $main-action-color;
+  color: $main-action-color;
+}
+
+.button--ghost:hover,
+.button--ghost:focus,
+.button--ghost:active {
+  box-shadow: 0px 0px 30px $main-action-color;
+}
+
+.button--ghost:active {
+  background-color: $main-action-color;
+  color: $main-theme-color;
+}
+
+.button--action {
+
+}
