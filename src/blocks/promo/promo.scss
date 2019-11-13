@@ -2,6 +2,7 @@
   padding-top: $padding-mobile;
   padding-bottom: $padding-mobile;
   position: relative;
+  // overflow-y: hidden;
 }
 
 .promo__article {
@@ -11,18 +12,67 @@
   flex-direction: column;
   align-items: center;
   min-height: 575px;
+  
+  @media (min-width: $width-tablet) {
+    max-width: $width-tablet-container;
+    align-items: flex-start;
+
+  }
+  
+  @media (min-width: $width-tablet-album) {
+    max-width: $width-tablet-album-container;
+
+  }
+  
+  @media (min-width: $width-desktop) {
+    max-width: $width-desktop-container;
+
+  }
 }
 
 .promo__article * {
   z-index: 2;
 }
 
+.promo__content {
+  text-align: center;
+  
+  @media (min-width: $width-tablet) {
+    text-align: left;
+    max-width: $width-mobile-container;
+  }
+  
+  @media (min-width: $width-tablet-album) {
+    text-align: left;
+    max-width: $width-mobile-album-container;
+  }
+}
+
 .promo__bg {
- overflow-x: hidden;
- position: absolute;
- top: 230px;
- left: -30px;
- z-index: 1;
+  background-image: url(../img/top-can-mobile@1x.png);
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 150px;
+  background-repeat: no-repeat;
+
+  @media (min-width: $width-tablet) {
+    top: -100px;
+    right: -150px;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    background-image: url(../img/top-can-desktop@1x.png);
+    top: -100px;
+    right: -150px;
+    background-position: center bottom;
+  }
+
+  @media (min-width: $width-desktop) {
+    right: -350px;
+    // background-position: center bottom;
+  }
 }
 
 .promo__bg--mobile {
