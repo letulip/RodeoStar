@@ -93,8 +93,12 @@
   border-bottom: none;
 }
 
-.mainNav__item--marginTop {
+.mainNav__item--marginTop-mobile {
   margin-top: $padding-mobile;
+
+  @media (min-width: $width-tablet-album) {
+    margin-top: 0;
+  }
 }
 
 .mainNav__item--burger {
