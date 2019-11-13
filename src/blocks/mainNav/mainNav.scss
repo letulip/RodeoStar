@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding-top: $padding-mobile;
   padding-bottom: $padding-mobile;
+  transition: all 0.3s;
 
   @media (min-width: $width-mobile-album) {
     max-width: $width-mobile-album-container;
@@ -32,6 +33,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+
+  @media (min-width: $width-tablet-album) {
+    flex-wrap: nowrap;
+  }
 }
 
 .mainNav__item {
@@ -46,17 +52,32 @@
     width: 124px;
     height: 150px;
     margin-right: auto;
-    
+
+    // delete when SVG
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .mainNav__item--mobile {
   display: none;
+  order: 2;
+  flex-basis: 100%;
+  padding-top: $padding-mobile;
+  padding-bottom: $padding-mobile;
+  justify-content: center;
 
   @media (min-width: $width-tablet-album) {
     display: flex;
-    
+    order: 0;
+    flex-basis: auto;
+    justify-content: flex-end;
   }
+}
+
+.mainNav__item--mobile-flex {
+  display: flex;
 }
 
 .mainNav__item--wide {
@@ -82,6 +103,11 @@
 
   @media (min-width: $width-tablet-album) {
     padding-left: 20px;
+    
+  }
+
+  @media (min-width: $width-desktop) {
+    padding-left: 35px;
     
   }
 }
@@ -116,6 +142,8 @@
   height: 2px;
   z-index: 2;
   background-color: $main-action-color;
+  transition-property: transform, top;
+  transition-duration: 0.3s, 0.3s;
 }
 
 .mainNav__burger::before {
@@ -124,4 +152,18 @@
 
 .mainNav__burger::after {
   top: 7px;
+}
+
+.mainNav__burger--close {
+  background-color: transparent;
+}
+
+.mainNav__burger--close::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.mainNav__burger--close::after {
+  top: 0;
+  transform: rotate(-45deg);
 }
