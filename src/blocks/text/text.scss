@@ -1,0 +1,26 @@
+.text {
+  font-size: $text-mobile-font;
+  line-height: $text-mobile-line;
+
+  @media (min-width: $width-tablet) {
+    font-size: $text-tablet-font;
+    line-height: $text-tablet-line;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    font-size: $text-desktop-font;
+    line-height: $text-desktop-line;
+  }
+}
+
+.text--common {
+  color: $white;
+}
+
+.text--action {
+  color: $main-action-color;
+}
+
+.text--center {
+  text-align: center;
+}

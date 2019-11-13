@@ -1,0 +1,43 @@
+.promo {
+  padding-top: $padding-mobile;
+  padding-bottom: $padding-mobile;
+  position: relative;
+}
+
+.promo__article {
+  max-width: $width-mobile-container;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 575px;
+}
+
+.promo__article * {
+  z-index: 2;
+}
+
+.promo__bg {
+ overflow-x: hidden;
+ position: absolute;
+ top: 230px;
+ left: -30px;
+ z-index: 1;
+}
+
+.promo__bg--mobile {
+  @media (min-width: $width-tablet) {
+    display: none;
+  }
+}
+
+.promo__bg--desktop {
+  display: none;
+  @media (min-width: $width-tablet) {
+    display: flex;
+  }
+}
+
+.promo__img {
+  height: 475px;
+}

@@ -1,0 +1,33 @@
+.heading {
+  
+}
+
+.heading--light {
+  font-weight: lighter;
+}
+
+.heading--common {
+  color: $white;
+}
+
+.heading--action {
+  color: $main-action-color;
+}
+
+.heading--center {
+  text-align: center;
+}
+
+.heading--h1 {
+  font-size: $heading-h1-mobile-font;
+  line-height: $heading-h1-mobile-line;
+}
+
+.heading--h2 {
+  font-size: $heading-h2-mobile-font;
+  line-height: $heading-h2-mobile-line;
+}
+
+.heading--uppercase {
+  text-transform: uppercase;
+}
