@@ -3,6 +3,10 @@
   padding-bottom: $padding-mobile;
   position: relative;
   // overflow-y: hidden;
+
+  @media (min-width: $width-tablet) {
+    display: flex;
+  }
 }
 
 .promo__article {
