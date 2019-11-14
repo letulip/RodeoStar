@@ -66,6 +66,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
-
+  overflow: hidden;
   background-image: linear-gradient(to right, $main-theme-color, $main-theme-color2);
 }

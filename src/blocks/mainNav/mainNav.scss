@@ -4,6 +4,7 @@
   padding-top: $padding-mobile;
   padding-bottom: $padding-mobile;
   transition: all 0.3s;
+  z-index: 10;
 
   @media (min-width: $width-mobile-album) {
     max-width: $width-mobile-album-container;
@@ -34,6 +35,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  z-index: 3;
 
   @media (min-width: $width-tablet-album) {
     flex-wrap: nowrap;
@@ -42,6 +44,7 @@
 
 .mainNav__item {
   color: $white;
+  z-index: 3;
 }
 
 .mainNav__item--logo {
@@ -103,6 +106,12 @@
 
 .mainNav__item--burger {
   padding: $padding-mobile;
+  z-index: 10;
+
+  @media (min-width: $width-tablet-album) {
+    display: none;
+    
+  }
 }
 
 .mainNav__link {
@@ -161,8 +170,7 @@
   height: 2px;
   z-index: 2;
   background-color: $main-action-color;
-  transition-property: transform, top;
-  transition-duration: 0.3s, 0.3s;
+  transition: transform 0.3s, top 0.3s;
 }
 
 .mainNav__burger::before {

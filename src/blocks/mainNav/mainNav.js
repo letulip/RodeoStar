@@ -1,7 +1,8 @@
 const CLOSE = `mainNav__burger--close`;
 const MAIN_NAV_ITEM_FLEX = `mainNav__item--mobile-flex`;
 const mainNav = document.querySelector(`.mainNav`);
-const burger = mainNav.querySelector(`.mainNav__burger`);
+const burger = mainNav.querySelector(`.mainNav__item--burger`);
+const burgerElement = burger.querySelector(`.mainNav__burger`);
 const mobileItems = mainNav.querySelectorAll(`.mainNav__item--mobile`);
 
 const viewItems = () => {
@@ -17,13 +18,13 @@ const unviewItems = () => {
 };
 
 const closeNav = () => {
-  burger.classList.remove(CLOSE);
+  burgerElement.classList.remove(CLOSE);
   burger.removeEventListener(`click`, closeNav);
   unviewItems();
 };
 
 const dropNav = () => {
-  burger.classList.add(CLOSE);
+  burgerElement.classList.add(CLOSE);
   burger.addEventListener(`click`, closeNav);
   viewItems();
 };
