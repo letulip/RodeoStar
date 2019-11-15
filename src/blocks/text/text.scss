@@ -1,6 +1,7 @@
 .text {
   font-size: $text-mobile-font;
   line-height: $text-mobile-line;
+  max-width: $width-tablet-album-container;
 
   @media (min-width: $width-tablet) {
     font-size: $text-tablet-font;
@@ -27,4 +28,12 @@
 
 .text--paddingBottom {
   padding-bottom: $padding-mobile;
+}
+
+.text--center-tablet {
+  text-align: left;
+
+  @media (min-width: $width-tablet) {
+    text-align: center;
+  }
 }

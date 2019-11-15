@@ -66,6 +66,13 @@ body {
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   background-image: linear-gradient(to right, $main-theme-color, $main-theme-color2);
+}
+
+.hr {
+  width: 50px;
+  height: 2px;
+  background-color: $main-action-color;
+  margin: $padding-mobile auto;
 }
