@@ -1,4 +1,14 @@
 .heading {
+  margin-top: $padding-mobile;
+  margin-bottom: $padding-mobile;
+}
+
+.heading--narrow {
+  max-width: 235px;
+  
+  @media (min-width: $width-tablet) {
+    max-width: 570px;
+  }
   
 }
 
@@ -16,6 +26,7 @@
 
 .heading--center {
   text-align: center;
+  margin: auto;
 }
 
 .heading--h1 {
@@ -30,4 +41,8 @@
 
 .heading--uppercase {
   text-transform: uppercase;
+}
+
+.heading--marginTop-big {
+  margin-top: 50px;
 }

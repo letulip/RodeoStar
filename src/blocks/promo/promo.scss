@@ -3,15 +3,29 @@
   padding-bottom: $padding-mobile;
   position: relative;
   // overflow-y: hidden;
+}
+
+.promo__wrapper {
+  margin-bottom: 200px;
 
   @media (min-width: $width-tablet) {
     display: flex;
+    // margin-bottom: 0;
+    max-width: $width-tablet-container;
+    margin: 0 auto;
   }
+
+  @media (min-width: $width-tablet-album) {
+    max-width: $width-tablet-album-container;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    max-width: $width-desktop-container;
+  }
+
 }
 
 .promo__article {
-  max-width: $width-mobile-container;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +34,7 @@
   @media (min-width: $width-tablet) {
     max-width: $width-tablet-container;
     align-items: flex-start;
-
+    margin-left: 0;
   }
   
   @media (min-width: $width-tablet-album) {
