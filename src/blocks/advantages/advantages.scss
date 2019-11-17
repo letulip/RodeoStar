@@ -13,10 +13,10 @@
   text-align: center;
   
   @media (min-width: $width-mobile-album) {
-   flex-basis: 49%;
+    flex-basis: 49%;
   }
   
   @media (min-width: $width-tablet-album) {
-   flex-basis: 33%;
+    flex-basis: 33%;
   }
 }

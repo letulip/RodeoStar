@@ -6,7 +6,7 @@
 .heading--narrow {
   max-width: 235px;
   
-  @media (min-width: $width-tablet) {
+  @media (min-width: $width-mobile-album) {
     max-width: 570px;
   }
   
@@ -32,11 +32,31 @@
 .heading--h1 {
   font-size: $heading-h1-mobile-font;
   line-height: $heading-h1-mobile-line;
+  
+  @media (min-width: $width-tablet) {
+    font-size: $heading-h1-desktop-font;
+    line-height: $heading-h1-desktop-line;
+  }
 }
 
 .heading--h2 {
   font-size: $heading-h2-mobile-font;
   line-height: $heading-h2-mobile-line;
+  
+  @media (min-width: $width-tablet) {
+    font-size: $heading-h2-desktop-font;
+    line-height: $heading-h2-desktop-line;
+  }
+}
+
+.heading--h3 {
+  font-size: $heading-h3-mobile-font;
+  line-height: $heading-h3-mobile-line;
+  
+  @media (min-width: $width-tablet) {
+    font-size: $heading-h3-desktop-font;
+    line-height: $heading-h3-desktop-line;
+  }
 }
 
 .heading--uppercase {

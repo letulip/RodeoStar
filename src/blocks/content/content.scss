@@ -24,5 +24,11 @@
 }
 
 .content__article {
-  
+  margin-bottom: $padding-desktop;
+}
+
+.content__article--sales {
+  background-image: url('/img/splash@1x.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }

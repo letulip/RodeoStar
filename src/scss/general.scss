@@ -75,4 +75,43 @@ body {
   height: 2px;
   background-color: $main-action-color;
   margin: $padding-mobile auto;
+  
+  @media (min-width: $width-tablet) {
+    margin: $padding-desktop auto;
+  }
+}
+
+.dots {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: $main-action-color;
+  box-shadow: 0px 0px 40px $main-action-color;
+  margin: $padding-mobile auto;
+  
+  @media (min-width: $width-tablet) {
+    margin: $padding-desktop auto;
+  }
+
+}
+
+.dots::before,
+.dots::after {
+  position: absolute;
+  content: '';
+  width: 8px;
+  height: 8px;
+  top: 3px;
+  border-radius: 50%;
+  background-color: $main-action-color;
+  box-shadow: 0px 0px 40px $main-action-color;
+}
+
+.dots::before {
+  left: -50px;
+}
+
+.dots::after {
+  right: -50px;
 }
