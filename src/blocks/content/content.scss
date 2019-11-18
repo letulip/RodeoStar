@@ -52,8 +52,15 @@
   margin-bottom: $padding-desktop;
 }
 
-// .content__article--sales {
-//   background-image: url('/img/splash@1x.png');
-//   background-repeat: no-repeat;
-//   background-position: center;
-// }
+.content__article--advantages {
+  background-image: url('/img/advs-bg@1x.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: $padding-mobile;
+  padding-bottom: $padding-mobile;
+
+  @media (min-width: $width-tablet) {
+    padding-top: $padding-desktop;
+
+  }
+}
