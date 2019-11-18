@@ -23,12 +23,37 @@
   }
 }
 
+.content--wide {
+  margin: 0;
+  max-width: none;
+
+  @media (min-width: $width-mobile-album) {
+    max-width: none;
+    
+  }
+
+  @media (min-width: $width-tablet) {
+    max-width: none;
+    
+  }
+
+  @media (min-width: $width-tablet-album) {
+    max-width: none;
+    
+  }
+
+  @media (min-width: $width-desktop) {
+    max-width: none;
+    
+  }
+}
+
 .content__article {
   margin-bottom: $padding-desktop;
 }
 
-.content__article--sales {
-  background-image: url('/img/splash@1x.png');
-  background-repeat: no-repeat;
-  background-position: center;
-}
+// .content__article--sales {
+//   background-image: url('/img/splash@1x.png');
+//   background-repeat: no-repeat;
+//   background-position: center;
+// }

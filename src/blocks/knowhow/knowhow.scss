@@ -1,0 +1,48 @@
+.knowhow {
+  
+  @media (min-width: $width-tablet) {
+    display: flex;
+  }
+}
+
+.knowhow__img {
+  width: 100%;
+  height: auto;
+
+  @media (min-width: $width-tablet) {
+    width: 384px;
+    height: 384px;
+    // max-width: 50%;
+    align-self: center;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    width: 585px;
+    // height: 585px;
+    max-width: 50%;
+    margin-right: 40px;
+  }
+}
+
+.knowhow__content {
+  max-width: $width-mobile-container;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (min-width: $width-mobile-album) {
+    max-width: $width-mobile-album-container;
+    
+  }
+
+  @media (min-width: $width-tablet) {
+    padding-right: $padding-mobile;
+    padding-left: $padding-mobile;
+    text-align: left;
+    
+  }
+
+  @media (min-width: $width-tablet-album) {
+    margin-left: 40px;
+  }
+}

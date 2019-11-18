@@ -81,6 +81,13 @@ body {
   }
 }
 
+.hr--center-mobile {
+  
+  @media (min-width: $width-tablet) {
+    margin-left: 0;
+  }
+}
+
 .dots {
   position: relative;
   width: 14px;

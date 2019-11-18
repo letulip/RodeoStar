@@ -6,6 +6,7 @@
   border-radius: 25px;
   text-decoration: none;
   display: flex;
+  // text-align: center;
   justify-content: center;
   align-items: center;
   font-size: $text-mobile-font;
@@ -37,4 +38,12 @@
   background-color: $main-action-color;
   color: $main-theme-color;
   box-shadow: 0px 0px 30px $main-action-color;
+}
+
+.button--center-mobile {
+  margin: $padding-mobile auto;
+
+  @media (min-width: $width-tablet) {
+    margin-left: 0;
+  }
 }
