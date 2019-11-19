@@ -30,6 +30,10 @@
   }
 }
 
+.text--light {
+  font-weight: lighter;
+}
+
 .text--common {
   color: $white;
 }
@@ -53,4 +57,8 @@
   @media (min-width: $width-tablet) {
     text-align: center;
   }
+}
+
+.text--marginTop-0 {
+  margin-top: 0;
 }

@@ -52,7 +52,8 @@
   margin-bottom: $padding-desktop;
 }
 
-.content__article--advantages {
+.content__article--advantages,
+.content__article--coop {
   background-image: url('/img/advs-bg@1x.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -63,4 +64,10 @@
     padding-top: $padding-desktop;
 
   }
+}
+
+.content__article--coop {
+  // background-image: url('/img/coop-bg@1x.png');
+  background: #0B0B21 0% 0% no-repeat padding-box, url('/img/coop-bg@1x.png');
+  background-size: cover;
 }
