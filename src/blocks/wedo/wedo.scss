@@ -1,0 +1,68 @@
+.wedo {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 50px;
+  counter-reset: sales;
+  
+  @media (min-width: $width-mobile-album) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.wedo__item {
+  text-align: center;
+  width: $width-mobile-container;
+  height: $width-mobile-container;
+  margin-bottom: $padding-mobile;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent linear-gradient(310deg, #00005799 0%, #00005799 0%, #30007F99 99%, #30007F99 100%) 0% 0% no-repeat padding-box, url('/img/wedo-1@1x.png');
+  background-size: cover;
+  
+  @media (min-width: $width-mobile-album) {
+    flex-basis: 43%;
+    padding-left: $padding-mobile;
+    padding-right: $padding-mobile;
+  }
+  
+  @media (min-width: $width-tablet) {
+    flex-basis: 44%;
+  }
+  
+  @media (min-width: $width-tablet-album) {
+    flex-basis: 29%;
+  }
+  
+  @media (min-width: $width-desktop) {
+    height: 340px;
+    flex-basis: 310px;
+    margin-bottom: 30px;
+  }
+}
+
+.wedo__item--2 {
+  background: transparent linear-gradient(310deg, #00005799 0%, #00005799 0%, #30007F99 99%, #30007F99 100%) 0% 0% no-repeat padding-box, url('/img/wedo-2@1x.png');
+  background-size: cover;
+}
+
+.wedo__item--3 {
+  background: transparent linear-gradient(310deg, #00005799 0%, #00005799 0%, #30007F99 99%, #30007F99 100%) 0% 0% no-repeat padding-box, url('/img/wedo-3@1x.png');
+}
+
+.wedo__item--4 {
+  background: transparent linear-gradient(310deg, #00005799 0%, #00005799 0%, #30007F99 99%, #30007F99 100%) 0% 0% no-repeat padding-box, url('/img/wedo-4@1x.png');
+  background-size: cover;
+}
+
+.wedo__item--5 {
+  background: transparent linear-gradient(310deg, #00005799 0%, #00005799 0%, #30007F99 99%, #30007F99 100%) 0% 0% no-repeat padding-box, url('/img/wedo-5@1x.png');
+  background-size: cover;
+}
+
+.wedo__item--6 {
+  background: transparent linear-gradient(310deg, #00005799 0%, #00005799 0%, #30007F99 99%, #30007F99 100%) 0% 0% no-repeat padding-box, url('/img/wedo-6@1x.png');
+  background-size: cover;
+}

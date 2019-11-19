@@ -88,6 +88,14 @@ body {
   }
 }
 
+.hr--small {
+  width: 30px;
+
+  @media (min-width: $width-tablet) {
+    margin: $padding-mobile auto;
+  }
+}
+
 .dots {
   position: relative;
   width: 14px;

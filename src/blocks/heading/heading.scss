@@ -59,6 +59,16 @@
   }
 }
 
+.heading--h4 {
+  font-size: $heading-h4-mobile-font;
+  line-height: $heading-h4-mobile-line;
+  
+  @media (min-width: $width-tablet) {
+    font-size: $heading-h4-desktop-font;
+    line-height: $heading-h4-desktop-line;
+  }
+}
+
 .heading--uppercase {
   text-transform: uppercase;
 }

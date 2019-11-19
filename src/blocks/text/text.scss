@@ -14,6 +14,22 @@
   }
 }
 
+.text--sm {
+  font-size: $sm-text-mobile-font;
+  line-height: $sm-text-mobile-line;
+  max-width: $width-tablet-album-container;
+
+  @media (min-width: $width-tablet) {
+    font-size: $sm-text-tablet-font;
+    line-height: $sm-text-tablet-line;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    font-size: $sm-text-desktop-font;
+    line-height: $sm-text-desktop-line;
+  }
+}
+
 .text--common {
   color: $white;
 }
