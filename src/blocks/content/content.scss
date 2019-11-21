@@ -1,0 +1,70 @@
+.content {
+  max-width: $width-mobile-container;
+  margin: 0 auto;
+
+  @media (min-width: $width-mobile-album) {
+    max-width: $width-mobile-album-container;
+    
+  }
+
+  @media (min-width: $width-tablet) {
+    max-width: $width-tablet-container;
+    
+  }
+
+  @media (min-width: $width-tablet-album) {
+    max-width: $width-tablet-album-container;
+    
+  }
+
+  @media (min-width: $width-desktop) {
+    max-width: $width-desktop-container;
+    
+  }
+}
+
+.content--wide {
+  margin: 0;
+  max-width: none;
+
+  @media (min-width: $width-mobile-album) {
+    max-width: none;
+    
+  }
+
+  @media (min-width: $width-tablet) {
+    max-width: none;
+    
+  }
+
+  @media (min-width: $width-tablet-album) {
+    max-width: none;
+    
+  }
+
+  @media (min-width: $width-desktop) {
+    max-width: none;
+    
+  }
+}
+
+.content__article {
+  margin-bottom: $padding-desktop;
+}
+
+.content__article--advantages,
+.content__article--coop {
+  background-image: url(../img/advs-bg@1x.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: $padding-mobile;
+  padding-bottom: $padding-mobile;
+  margin-bottom: 0;
+}
+
+.content__article--coop {
+  // background-image: url(../img/coop-bg@1x.png);
+  // background: #0B0B21 0% 0% no-repeat padding-box, url('../img/coop-bg@1x.png');
+  background: linear-gradient(310deg,#00005799 0%,#00005799 0%,#30007f99 99%,#30007f99 100%) 0% 0% no-repeat padding-box, url(../img/coop-bg@1x.png);
+  background-size: cover;
+}

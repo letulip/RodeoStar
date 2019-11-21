@@ -1,0 +1,64 @@
+.text {
+  font-size: $text-mobile-font;
+  line-height: $text-mobile-line;
+  max-width: $width-tablet-album-container;
+
+  @media (min-width: $width-tablet) {
+    font-size: $text-tablet-font;
+    line-height: $text-tablet-line;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    font-size: $text-desktop-font;
+    line-height: $text-desktop-line;
+  }
+}
+
+.text--sm {
+  font-size: $sm-text-mobile-font;
+  line-height: $sm-text-mobile-line;
+  max-width: $width-tablet-album-container;
+
+  @media (min-width: $width-tablet) {
+    font-size: $sm-text-tablet-font;
+    line-height: $sm-text-tablet-line;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    font-size: $sm-text-desktop-font;
+    line-height: $sm-text-desktop-line;
+  }
+}
+
+.text--light {
+  font-weight: lighter;
+}
+
+.text--common {
+  color: $white;
+}
+
+.text--action {
+  color: $main-action-color;
+}
+
+.text--center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.text--paddingBottom {
+  padding-bottom: $padding-mobile;
+}
+
+.text--center-tablet {
+  text-align: left;
+
+  @media (min-width: $width-tablet) {
+    text-align: center;
+  }
+}
+
+.text--marginTop-0 {
+  margin-top: 0;
+}

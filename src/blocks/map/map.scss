@@ -1,0 +1,42 @@
+.map {
+  
+  @media (min-width: $width-tablet) {
+    display: flex;
+  }
+}
+
+.map__img {
+  width: 100%;
+  height: auto;
+
+  @media (min-width: $width-tablet) {
+    max-width: 50%;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    
+  }
+}
+
+.map__content {
+  max-width: $width-mobile-container;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (min-width: $width-mobile-album) {
+    max-width: $width-mobile-album-container;
+    
+  }
+
+  @media (min-width: $width-tablet) {
+    padding-right: $padding-mobile;
+    padding-left: $padding-mobile;
+    text-align: left;
+    width: 384px;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    margin-right: 40px;
+    width: 585px;
+  }
+}

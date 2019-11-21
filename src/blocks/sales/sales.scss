@@ -1,0 +1,57 @@
+.sales {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 50px;
+  counter-reset: sales;
+  
+  @media (min-width: $width-mobile-album) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.sales__item {
+  text-align: center;
+  position: relative;
+  padding-top: 180px;
+  max-height: 250px;
+  
+  @media (min-width: $width-mobile-album) {
+    flex-basis: 44%;
+    padding-left: $padding-mobile;
+    padding-right: $padding-mobile;
+  }
+  
+  @media (min-width: $width-tablet-album) {
+    flex-basis: 30%;
+  }
+}
+
+.sales__item::before {
+  position: absolute;
+  counter-increment: sales;
+  content: counter(sales);
+  color: $main-action-color;
+  text-shadow: 0px 0px 15px $main-action-color;
+  font-weight: bolder;
+  font-size: 6em;
+  line-height: 1.6em;
+  top: 0;
+  left: calc(50% - 75px);
+  width: 150px;
+  height: 150px;
+  background-color: $main-theme-color3;
+  border-radius: 50%;
+}
+
+.sales__item::after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $main-action-color;
+  box-shadow: 0px 0px 25px $main-action-color;
+  top: 20px;
+  left: 33%;
+}

@@ -1,0 +1,96 @@
+.advantages {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 50px;
+  
+  @media (min-width: $width-mobile-album) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.advantages--yourWork {
+  max-width: $width-mobile-container;
+  margin: $padding-mobile auto;
+
+  @media (min-width: $width-mobile-album) {
+    max-width: $width-mobile-album-container;
+    
+  }
+
+  @media (min-width: $width-tablet) {
+    max-width: $width-tablet-container;
+    margin: $padding-desktop auto;
+    
+  }
+
+  @media (min-width: $width-tablet-album) {
+    max-width: $width-tablet-album-container;
+    
+  }
+
+  @media (min-width: $width-desktop) {
+    max-width: $width-desktop-container;
+    
+  }
+}
+
+.advantages--coop {
+  counter-reset: coopCounter;
+  
+  @media (min-width: $width-mobile-album) {
+    justify-content: space-between;
+  }
+}
+
+.advantages__item {
+  text-align: center;
+  margin-top: $padding-mobile;
+  
+  @media (min-width: $width-mobile-album) {
+    flex-basis: 49%;
+  }
+  
+  @media (min-width: $width-tablet-album) {
+    flex-basis: 32%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+}
+
+.advantages__item--coop {
+  position: relative;
+  padding-left: 90px;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  
+  @media (min-width: $width-mobile-album) {
+    flex-basis: 80%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  @media (min-width: $width-tablet) {
+    flex-basis: 34%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  @media (min-width: $width-tablet-album) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.advantages__item--coop::before {
+  position: absolute;
+  counter-increment: coopCounter;
+  content: '0' counter(coopCounter);
+  color: $main-action-color;
+  font-weight: lighter;
+  font-size: 4em;
+  line-height: 1.5em;
+  left: 0;
+}

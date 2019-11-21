@@ -1,0 +1,82 @@
+.heading {
+  margin-top: $padding-mobile;
+  margin-bottom: $padding-mobile;
+}
+
+.heading--narrow {
+  max-width: 235px;
+  
+  @media (min-width: $width-mobile-album) {
+    max-width: 570px;
+  }
+  
+}
+
+.heading--light {
+  font-weight: lighter;
+}
+
+.heading--common {
+  color: $white;
+}
+
+.heading--action {
+  color: $main-action-color;
+}
+
+.heading--center {
+  text-align: center;
+  margin: auto;
+}
+
+.heading--h1 {
+  font-size: $heading-h1-mobile-font;
+  line-height: $heading-h1-mobile-line;
+  
+  @media (min-width: $width-tablet) {
+    font-size: $heading-h1-desktop-font;
+    line-height: $heading-h1-desktop-line;
+  }
+}
+
+.heading--h2 {
+  font-size: $heading-h2-mobile-font;
+  line-height: $heading-h2-mobile-line;
+  
+  @media (min-width: $width-tablet) {
+    font-size: $heading-h2-desktop-font;
+    line-height: $heading-h2-desktop-line;
+  }
+}
+
+.heading--h3 {
+  font-size: $heading-h3-mobile-font;
+  line-height: $heading-h3-mobile-line;
+  
+  @media (min-width: $width-tablet) {
+    font-size: $heading-h3-desktop-font;
+    line-height: $heading-h3-desktop-line;
+  }
+}
+
+.heading--h4 {
+  font-size: $heading-h4-mobile-font;
+  line-height: $heading-h4-mobile-line;
+  
+  @media (min-width: $width-tablet) {
+    font-size: $heading-h4-desktop-font;
+    line-height: $heading-h4-desktop-line;
+  }
+}
+
+.heading--uppercase {
+  text-transform: uppercase;
+}
+
+.heading--marginTop-big {
+  margin-top: 50px;
+}
+
+.heading--marginBottom-0 {
+  margin-bottom: 0;
+}

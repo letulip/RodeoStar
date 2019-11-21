@@ -1,1 +1,0 @@
-{"version":3,"sources":["general.scss"],"names":[],"mappings":"AAAA;EACE,8BAAsB;UAAtB,sBAAsB;EACtB,sBAAsB,EAAA","file":"style.css","sourcesContent":["html {\n  box-sizing: border-box;\n  background-color: aqua;\n}"]}
