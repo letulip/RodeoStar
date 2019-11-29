@@ -49,11 +49,12 @@ const formClose = () => {
 }
 
 const formSubmitEventListener = (evt) => {
-  evt.preventDefault();
+  // evt.preventDefault();
+  // console.log(form.action);
   formClose();
 }
 
-const formOpen = (evt) => {
+const formOpen = () => {
   overlay.style.display = `block`;
   overlay.addEventListener(`click`, formClose);
   body.style.overflow = `hidden`;
