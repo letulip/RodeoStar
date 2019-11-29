@@ -43,6 +43,7 @@ if (telInput) {
 const formClose = () => {
   overlay.removeEventListener(`click`, formClose);
   overlay.style.display = `none`;
+  body.style.overflow = `auto`;
   form.style.display = `none`;
   form.removeEventListener(`submit`, formSubmitEventListener);
 }
@@ -55,6 +56,7 @@ const formSubmitEventListener = (evt) => {
 const formOpen = (evt) => {
   overlay.style.display = `block`;
   overlay.addEventListener(`click`, formClose);
+  body.style.overflow = `hidden`;
   form.style.display = `block`;
   form.addEventListener(`submit`, formSubmitEventListener);
 }
