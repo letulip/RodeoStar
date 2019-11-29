@@ -1,18 +1,23 @@
 .form {
-  // display: none;
+  display: none;
 }
 
 .form--promo {
   width: 100%;
   z-index: 2;
   position: absolute;
-  top: 0;
+  top: 250px;
+
+  @media (min-width: $width-mobile-album) {
+    top: 200px;
+  }
 
   @media (min-width: $width-tablet) {
     max-width: 49%;
     position: relative;
     // margin: 0 auto;
     left: auto;
+    top: 0;
   }
 }
 
@@ -26,6 +31,7 @@
   border: 1px solid $form-element-color;
   width: $width-mobile-container;
   padding: $padding-mobile;
+  box-shadow: 0 0 30px #fbe600;
 
   @media (min-width: $width-tablet) {
     padding: $padding-tablet;

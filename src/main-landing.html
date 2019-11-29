@@ -49,7 +49,7 @@
           <p class="text text--common text--paddingBottom promo__content">
             Станьте официальным поставщиком популярных халяльных энергетиков <span class="text--action">Rodeo Star</span> и <span class="text--action">Black Lion</span> в свой регион&nbsp;и&nbsp;получайте до 100% маржи&nbsp;с&nbsp;каждой банки.
           </p>
-          <div class="button button--action">Получить прайс</div>
+          <div class="button button--action button--getPrice">Получить прайс</div>
         </article>
         <form class="form form--promo" action="/submit" method="post">
           <fieldset class="form__fieldset">
@@ -59,13 +59,13 @@
             </label>
             <label class="form__label">
               <span class="text text--light-grey text--sm">Телефон</span>
-              <input type="tel" class="form__input" id="form_phone" name="form_phone" placeholder="+7(999)123-1415" required>
+              <input type="tel" class="form__input form__input--tel" id="form_phone" name="form_phone" placeholder="+7(999)123-1415" required>
             </label>
             <label class="form__label">
               <span class="text text--light-grey text--sm">E-mail</span>
-              <input type="email" class="form__input" id="form_email" name="form_email" placeholder="ivan.ivanov@gmail.com" required>
+              <input type="email" class="form__input" id="form_email" name="form_email" placeholder="ivan.ivanov@mail.ru" required>
             </label>
-              <button class="button button--action button--center" type="submit">Получить прайс</button>
+              <button class="button button--action button--center button--getPrice-submit" type="submit">Получить прайс</button>
           </fieldset>
         </form>   
       </div>
@@ -278,6 +278,7 @@
     <div class="button button--action pageFooter__last">Получить прайс</div>
   </footer>
   <script src="js/mainNav/mainNav.js"></script>
+  <script src="js/form/form.js"></script>
   
 </body>
 </html>
