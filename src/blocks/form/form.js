@@ -40,8 +40,6 @@ if (telInput) {
 
 const formSubmitEventListener = (evt) => {
   evt.preventDefault();
-  console.log(`submited`);
-  
   form.style.display = `none`;
   form.removeEventListener(`submit`, formSubmitEventListener);
 }
