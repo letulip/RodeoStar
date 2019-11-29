@@ -3,21 +3,17 @@
 }
 
 .form--promo {
-  width: 100%;
-  z-index: 2;
-  position: absolute;
-  top: 250px;
+  width: auto;
+  z-index: 20;
+  position: fixed;
+  transform: scale(0.8);
+  left: calc(50% - 166px);
+  top: calc(50% - 220px);
 
-  @media (min-width: $width-mobile-album) {
-    top: 200px;
-  }
-
-  @media (min-width: $width-tablet) {
-    max-width: 49%;
-    position: relative;
-    // margin: 0 auto;
-    left: auto;
-    top: 0;
+  @media (min-width: $width-tablet-album) {
+    transform: none;
+    left: calc(50% - 161px);
+    top: calc(50% - 230px);
   }
 }
 
@@ -35,7 +31,7 @@
 
   @media (min-width: $width-tablet) {
     padding: $padding-tablet;
-    opacity: 0.95;
+    // opacity: 0.95;
   }
 }
 

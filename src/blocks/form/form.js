@@ -1,9 +1,11 @@
-const form = document.querySelector(`.form`);
+const body = document.querySelector(`body`);
+const overlay = body.querySelector(`.overlay`);
+const form = body.querySelector(`.form--promo`);
 const textarea = form.querySelector(`.form__input--textarea`);
 const textareaHidden = form.querySelector(`#form__input--textarea-hidden`);
 const telInput = form.querySelector(`.form__input--tel`);
 const getPriceSubmit = form.querySelector(`.button--getPrice-submit`);
-const getPrice = document.querySelector(`.button--getPrice`);
+const getPrice = body.querySelectorAll(`.button--getPrice`);
 
 if (textarea) {
   textarea.addEventListener(`input`, () => {
@@ -38,17 +40,27 @@ if (telInput) {
   telInput.addEventListener(`input`, telInputValidate);
 }
 
-const formSubmitEventListener = (evt) => {
-  evt.preventDefault();
+const formClose = () => {
+  overlay.removeEventListener(`click`, formClose);
+  overlay.style.display = `none`;
   form.style.display = `none`;
   form.removeEventListener(`submit`, formSubmitEventListener);
 }
 
-const getPriceEventListener = () => {
+const formSubmitEventListener = (evt) => {
+  evt.preventDefault();
+  formClose();
+}
+
+const formOpen = (evt) => {
+  overlay.style.display = `block`;
+  overlay.addEventListener(`click`, formClose);
   form.style.display = `block`;
   form.addEventListener(`submit`, formSubmitEventListener);
 }
 
 if (getPrice) {
-  getPrice.addEventListener(`click`, getPriceEventListener);
+  getPrice.forEach((button) => {
+    button.addEventListener(`click`, formOpen);
+  })
 }

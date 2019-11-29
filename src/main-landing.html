@@ -51,23 +51,6 @@
           </p>
           <div class="button button--action button--getPrice">Получить прайс</div>
         </article>
-        <form class="form form--promo" action="/submit" method="post">
-          <fieldset class="form__fieldset">
-            <label class="form__label">
-              <span class="text text--light-grey text--sm">Ваше имя</span>
-              <input type="text" class="form__input" id="form_name" name="form_name" placeholder="Иван Иванов" required>
-            </label>
-            <label class="form__label">
-              <span class="text text--light-grey text--sm">Телефон</span>
-              <input type="tel" class="form__input form__input--tel" id="form_phone" name="form_phone" placeholder="+7(999)123-1415" required>
-            </label>
-            <label class="form__label">
-              <span class="text text--light-grey text--sm">E-mail</span>
-              <input type="email" class="form__input" id="form_email" name="form_email" placeholder="ivan.ivanov@mail.ru" required>
-            </label>
-              <button class="button button--action button--center button--getPrice-submit" type="submit">Получить прайс</button>
-          </fieldset>
-        </form>   
       </div>
       <div class="promo__bg"></div>
     </section>
@@ -149,7 +132,7 @@
           <p class="text text--common">
             Являемся единственным в России дистрибьютором халяльных энергетиков Rodeo Star и Black Lion. Работаем с непосредственным производителем продукта – турецкой компанией, которой принадлежат права на бренды. Предоставляем полный пакет документов. Предлагаем самую низкую в РФ цену.
           </p>
-          <div class="button button--action button--center-mobile">Получить прайс</div>
+          <div class="button button--action button--center-mobile button--getPrice">Получить прайс</div>
         </div>
       </article>
       <article class="content__article content__article--map map">
@@ -271,11 +254,32 @@
     </section>
 
   </main>
+
+  <form class="form form--promo" action="/submit" method="post">
+    <fieldset class="form__fieldset">
+      <label class="form__label">
+        <span class="text text--light-grey text--sm">Ваше имя</span>
+        <input type="text" class="form__input" id="form_name" name="form_name" placeholder="Иван Иванов" required>
+      </label>
+      <label class="form__label">
+        <span class="text text--light-grey text--sm">Телефон</span>
+        <input type="tel" class="form__input form__input--tel" id="form_phone" name="form_phone" placeholder="+7(999)123-1415" required>
+      </label>
+      <label class="form__label">
+        <span class="text text--light-grey text--sm">E-mail</span>
+        <input type="email" class="form__input" id="form_email" name="form_email" placeholder="ivan.ivanov@mail.ru" required>
+      </label>
+        <button class="button button--action button--center button--getPrice-submit" type="submit">Получить прайс</button>
+    </fieldset>
+  </form>
+
+  <div class="overlay"></div>
+
   <footer class="pageFooter">
     <img src="img/logo.png" width="73" height="88" alt="Логотип РодеоСтар" class="logo">
     <a href="tel:88007654321" class="mainNav__link mainNav__link--phone pageFooter__phone">8 800 765 43 21</a>
     <div class="button button--common button--ghost">Обратный звонок</div>
-    <div class="button button--action pageFooter__last">Получить прайс</div>
+    <div class="button button--action pageFooter__last button--getPrice">Получить прайс</div>
   </footer>
   <script src="js/mainNav/mainNav.js"></script>
   <script src="js/form/form.js"></script>
