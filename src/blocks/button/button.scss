@@ -40,10 +40,19 @@
   box-shadow: 0px 0px 30px $main-action-color;
 }
 
+.button--action:active {
+  background-color: $main-theme-color;
+  color: $main-action-color;
+}
+
 .button--center-mobile {
   margin: $padding-mobile auto;
 
   @media (min-width: $width-tablet) {
     margin-left: 0;
   }
+}
+
+.button--center {
+  margin:0 auto;
 }

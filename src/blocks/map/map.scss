@@ -1,13 +1,17 @@
 .map {
+  margin-bottom: 0;
+  padding-bottom: $padding-desktop;
   
   @media (min-width: $width-tablet) {
     display: flex;
   }
 }
 
-.map__img {
+.map__interactive {
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 400px;
+  opacity: .8;
 
   @media (min-width: $width-tablet) {
     max-width: 50%;
