@@ -3,15 +3,8 @@ const overlay = body.querySelector(`.overlay`);
 const getPrice = body.querySelectorAll(`.button--getPrice`);
 const callMe = body.querySelectorAll(`.button--callMe`);
 
-const form = body.querySelector(`.form`);
-
-const textarea = form.querySelector(`.form__input--textarea`);
-const textareaHidden = form.querySelector(`#form__input--textarea-hidden`);
-const telInput = form.querySelector(`.form__input--tel`);
-const getPriceSubmit = form.querySelector(`.button--getPrice-submit`);
-
 const formPrice = `
-  <form class="form form--promo" action="/submit" method="post">
+  <form class="form form--fixed form--promo" action="/submit" method="post">
     <fieldset class="form__fieldset">
       <label class="form__label">
         <span class="text text--light-grey text--sm">Ваше имя</span>
@@ -25,13 +18,13 @@ const formPrice = `
         <span class="text text--light-grey text--sm">E-mail</span>
         <input type="email" class="form__input" id="form_email" name="form_email" placeholder="ivan.ivanov@mail.ru" required>
       </label>
-        <button class="button button--action button--center button--getPrice-submit" type="submit">Получить прайс</button>
+      <button class="button button--action button--center button--submit" type="submit">Получить прайс</button>
     </fieldset>
   </form>
   `;
 
 const formCallMe = `
-  <form class="form form--callMe" action="/submit" method="post">
+  <form class="form form--fixed form--callMe" action="/submit" method="post">
     <fieldset class="form__fieldset">
       <label class="form__label">
         <span class="text text--light-grey text--sm">Ваше имя</span>
@@ -41,26 +34,22 @@ const formCallMe = `
         <span class="text text--light-grey text--sm">Телефон</span>
         <input type="tel" class="form__input form__input--tel" id="form_phone" name="form_phone" placeholder="+7(999)123-1415" required>
       </label>
-      <label class="form__label">
-        <span class="text text--light-grey text--sm">E-mail</span>
-        <input type="email" class="form__input" id="form_email" name="form_email" placeholder="ivan.ivanov@mail.ru" required>
-      </label>
-        <button class="button button--action button--center button--getPrice-submit" type="submit">Получить прайс</button>
+      <button class="button button--action button--center button--submit" type="submit">Перезвоните мне</button>
     </fieldset>
   </form>
   `;
 
-if (textarea) {
-  textarea.addEventListener(`input`, () => {
+const addTextareaEventListener = (elementArea, elementAreaHidden) => {
+  elementArea.addEventListener(`input`, () => {
     let text = ``;
-    textarea.value.replace(/[<>]/g, `_`).split(`\n`).forEach((string) => {
+    elementArea.value.replace(/[<>]/g, `_`).split(`\n`).forEach((string) => {
       text += `<div>` + string.replace(/\s\s/g, ` &nbsp;`) + `&nbsp;</div>` + `\n`;
     });
-    textareaHidden.innerHTML = text;
+    elementAreaHidden.innerHTML = text;
     let height = textareaHidden.offsetHeight + 15;
-    textarea.style.height = height + `px`;
+    elementArea.style.height = height + `px`;
   });
-}
+};
 
 const telInputValidate = (input) => {
   const valids = [`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `0`, `(`, `)`, `+`, `-`, ` `];
@@ -69,45 +58,65 @@ const telInputValidate = (input) => {
 
   for (let i = 0; i < inputArray.length; i++) {
     if (!valids.includes(inputArray[i])) {
-      telInput.setCustomValidity(`Используйте цифры и ( ) + -`);
+      input.target.setCustomValidity(`Используйте цифры и ( ) + -`);
       return;
     } else {
-      telInput.setCustomValidity(``);
+      input.target.setCustomValidity(``);
     } 
   }
 };
-
-if (telInput) {
-  telInput.addEventListener(`input`, telInputValidate);
-}
 
 const formClose = () => {
   overlay.removeEventListener(`click`, formClose);
   overlay.style.display = `none`;
   body.style.overflow = `auto`;
-  form.style.display = `none`;
-  form.removeEventListener(`submit`, formSubmitEventListener);
+  const form = body.querySelector(`.form`);
+  if (form) {
+    form.remove();
+  }
 }
 
-const formSubmitEventListener = (evt) => {
-  // evt.preventDefault();
-  // console.log(form.action);
+const formSubmitEventListener = () => {
   formClose();
 }
 
-const formOpen = () => {
+const formOpen = (formLayout) => {
   overlay.style.display = `block`;
   overlay.addEventListener(`click`, formClose);
   body.style.overflow = `hidden`;
+
+  const formFragment = document.createDocumentFragment();
+  const template = document.createElement(`template`);
+  template.innerHTML = formLayout;
+  formFragment.appendChild(template.content);
+
+  const form = formFragment.querySelector(`.form`);
+
+  const textarea = form.querySelector(`.form__input--textarea`);
+  const telInput = form.querySelector(`.form__input--tel`);
+  console.log(telInput);
+  // const submit = form.querySelector(`.button--submit`);
+
+  if (textarea) {
+    const textareaHidden = form.querySelector(`#form__input--textarea-hidden`);
+    addTextareaEventListener(textarea, textareaHidden);
+  }
+
+  if (telInput) {
+    telInput.addEventListener(`input`, telInputValidate);
+  }
+
   form.addEventListener(`submit`, formSubmitEventListener);
+
+  body.appendChild(formFragment);
 }
 
 const openPromoForm = () => {
-
+  formOpen(formPrice);
 };
 
 const openCallMeForm = () => {
-
+  formOpen(formCallMe);
 };
 
 if (getPrice) {
