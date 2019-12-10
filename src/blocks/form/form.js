@@ -1,43 +1,9 @@
 const body = document.querySelector(`body`);
-const overlay = body.querySelector(`.overlay`);
+// const overlay = body.querySelector(`.overlay`);
 const getPrice = body.querySelectorAll(`.button--getPrice`);
 const callMe = body.querySelectorAll(`.button--callMe`);
-
-const formPrice = `
-  <form class="form form--fixed form--promo" action="/submit" method="post">
-    <fieldset class="form__fieldset">
-      <label class="form__label">
-        <span class="text text--light-grey text--sm">Ваше имя</span>
-        <input type="text" class="form__input" id="form_name" name="form_name" placeholder="Иван Иванов" required>
-      </label>
-      <label class="form__label">
-        <span class="text text--light-grey text--sm">Телефон</span>
-        <input type="tel" class="form__input form__input--tel" id="form_phone" name="form_phone" placeholder="+7(999)123-1415" required>
-      </label>
-      <label class="form__label">
-        <span class="text text--light-grey text--sm">E-mail</span>
-        <input type="email" class="form__input" id="form_email" name="form_email" placeholder="ivan.ivanov@mail.ru" required>
-      </label>
-      <button class="button button--action button--center button--submit" type="submit">Получить прайс</button>
-    </fieldset>
-  </form>
-  `;
-
-const formCallMe = `
-  <form class="form form--fixed form--callMe" action="/submit" method="post">
-    <fieldset class="form__fieldset">
-      <label class="form__label">
-        <span class="text text--light-grey text--sm">Ваше имя</span>
-        <input type="text" class="form__input" id="form_name" name="form_name" placeholder="Иван Иванов" required>
-      </label>
-      <label class="form__label">
-        <span class="text text--light-grey text--sm">Телефон</span>
-        <input type="tel" class="form__input form__input--tel" id="form_phone" name="form_phone" placeholder="+7(999)123-1415" required>
-      </label>
-      <button class="button button--action button--center button--submit" type="submit">Перезвоните мне</button>
-    </fieldset>
-  </form>
-  `;
+const formPrice = body.querySelector(`.form--price`);
+const formCallMe = body.querySelector(`.form--callMe`);
 
 const addTextareaEventListener = (elementArea, elementAreaHidden) => {
   elementArea.addEventListener(`input`, () => {
@@ -66,39 +32,89 @@ const telInputValidate = (input) => {
   }
 };
 
-const formClose = () => {
-  overlay.removeEventListener(`click`, formClose);
-  overlay.style.display = `none`;
+const formClose = (formElement, overlay) => {
+  overlay.remove();
+  // overlay.style.display = `none`;
   body.style.overflow = `auto`;
-  const form = body.querySelector(`.form`);
-  if (form) {
-    form.remove();
+  // const form = body.querySelector(`.form`);
+  if (formElement) {
+    formElement.style.display = `none`;
   }
-}
+  // console.log(evt);
+  
+};
 
-const formSubmitEventListener = () => {
-  formClose();
-}
+const formSubmitEventListener = (formElement) => {
+  formClose(formElement);
+};
 
-const formOpen = (formLayout) => {
-  overlay.style.display = `block`;
-  overlay.addEventListener(`click`, formClose);
-  body.style.overflow = `hidden`;
+// const getXsrf = () => {
+//   return xsrf;
+  
+// };
 
-  const formFragment = document.createDocumentFragment();
-  const template = document.createElement(`template`);
-  template.innerHTML = formLayout;
-  formFragment.appendChild(template.content);
+// const formPrice = {
+//   class: `form--promo`,
+//   action: `./submit`,
+//   layout: `
+//   <fieldset class="form__fieldset">
+//     <label class="form__label">
+//       <span class="text text--light-grey text--sm">Ваше имя</span>
+//       <input type="text" class="form__input" id="form_name" name="form_name" placeholder="Иван Иванов" required>
+//     </label>
+//     <label class="form__label">
+//       <span class="text text--light-grey text--sm">Телефон</span>
+//       <input type="tel" class="form__input form__input--tel" id="form_phone" name="form_phone" placeholder="+7(999)123-1415" required>
+//     </label>
+//     <label class="form__label">
+//       <span class="text text--light-grey text--sm">E-mail</span>
+//       <input type="email" class="form__input" id="form_email" name="form_email" placeholder="ivan.ivanov@mail.ru" required>
+//     </label>
+//     ${getXsrf()}
+//     <button class="button button--action button--center button--submit" type="submit">Получить прайс</button>
+//   </fieldset>`,
+// }
 
-  const form = formFragment.querySelector(`.form`);
+// const formPrice = `
+//     <fieldset class="form__fieldset">
+//       <label class="form__label">
+//         <span class="text text--light-grey text--sm">Ваше имя</span>
+//         <input type="text" class="form__input" id="form_name" name="form_name" placeholder="Иван Иванов" required>
+//       </label>
+//       <label class="form__label">
+//         <span class="text text--light-grey text--sm">Телефон</span>
+//         <input type="tel" class="form__input form__input--tel" id="form_phone" name="form_phone" placeholder="+7(999)123-1415" required>
+//       </label>
+//       <label class="form__label">
+//         <span class="text text--light-grey text--sm">E-mail</span>
+//         <input type="email" class="form__input" id="form_email" name="form_email" placeholder="ivan.ivanov@mail.ru" required>
+//       </label>
+//       ${getXsrf()}
+//       <button class="button button--action button--center button--submit" type="submit">Получить прайс</button>
+//     </fieldset>`;
 
-  const textarea = form.querySelector(`.form__input--textarea`);
-  const telInput = form.querySelector(`.form__input--tel`);
-  console.log(telInput);
-  // const submit = form.querySelector(`.button--submit`);
+// const formCallMe = `
+//     <fieldset class="form__fieldset">
+//       <label class="form__label">
+//         <span class="text text--light-grey text--sm">Ваше имя</span>
+//         <input type="text" class="form__input" id="form_name" name="form_name" placeholder="Иван Иванов" required>
+//       </label>
+//       <label class="form__label">
+//         <span class="text text--light-grey text--sm">Телефон</span>
+//         <input type="tel" class="form__input form__input--tel" id="form_phone" name="form_phone" placeholder="+7(999)123-1415" required>
+//       </label>
+//       ${getXsrf()}
+//       <button class="button button--action button--center button--submit" type="submit">Перезвоните мне</button>
+//     </fieldset>`;
+
+const addFormEventListeners = (formElement) => {
+  const textarea = formElement.querySelector(`.form__input--textarea`);
+  const telInput = formElement.querySelector(`.form__input--tel`);
+  // console.log(telInput);
+  // const submit = formElement.querySelector(`.button--submit`);
 
   if (textarea) {
-    const textareaHidden = form.querySelector(`#form__input--textarea-hidden`);
+    const textareaHidden = formElement.querySelector(`#form__input--textarea-hidden`);
     addTextareaEventListener(textarea, textareaHidden);
   }
 
@@ -106,12 +122,38 @@ const formOpen = (formLayout) => {
     telInput.addEventListener(`input`, telInputValidate);
   }
 
-  form.addEventListener(`submit`, formSubmitEventListener);
+  formElement.addEventListener(`submit`, formSubmitEventListener);
+  return formElement;
+};
 
-  body.appendChild(formFragment);
-}
+const createOverlay = (formElement) => {
+  const overlay = document.createElement(`div`);
+  overlay.classList.add(`overlay`);
+  overlay.addEventListener(`click`, () => {
+    formClose(formElement, overlay);
+  });
+  body.appendChild(overlay);
+};
 
-const openPromoForm = () => {
+const formOpen = (formElement) => {
+  // overlay.style.display = `block`;
+  // overlay.addEventListener(`click`, formClose);
+  createOverlay(formElement);
+  body.style.overflow = `hidden`;
+
+  formElement.style.display = `block`;
+
+  // const formFragment = document.createDocumentFragment();
+  // const template = document.createElement(`template`);
+  // form.innerHTML = formElement.layout;
+  // formFragment.appendChild(template.content);
+  addFormEventListeners(formElement);
+
+  // const form = formFragment.querySelector(`.form`);
+  // body.appendChild(addFormEventListeners(form));
+};
+
+const openPriceForm = () => {
   formOpen(formPrice);
 };
 
@@ -121,7 +163,7 @@ const openCallMeForm = () => {
 
 if (getPrice) {
   getPrice.forEach((button) => {
-    button.addEventListener(`click`, openPromoForm);
+    button.addEventListener(`click`, openPriceForm);
   })
 }
 
