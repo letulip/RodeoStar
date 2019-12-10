@@ -115,6 +115,7 @@
 }
 
 .mainNav__link {
+  position: relative;
   color: $white;
   text-decoration: none;
   font-size: $text-mobile-font;
@@ -130,14 +131,34 @@
   }
 
   @media (min-width: $width-tablet-album) {
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     
   }
 
   @media (min-width: $width-desktop) {
-    padding-left: 35px;
+    padding-left: 18px;
+    padding-right: 18px;
     
   }
+}
+
+.mainNav__link--underline::after,
+.mainNav__link--underline::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 0%;
+  height: 3px;
+  left: 9px;
+  transition: all .3s ease-in-out;
+  background: $main-action-color;
+  box-shadow: 0px 0px 30px $main-action-color;
+}
+
+.mainNav__link--underline:hover::after,
+.mainNav__link--underline:focus::after {
+  width: 90%;
 }
 
 .mainNav__link--phone {
