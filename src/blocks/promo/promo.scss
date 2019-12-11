@@ -5,7 +5,7 @@
   position: relative;
   // overflow-y: hidden;
 
-  background-image: url(../img/top-can-mobile@1x.jpg);
+  background-image: url(../img/top-can-mobile@1x.png);
   background-position: 50% 80%;
   background-repeat: no-repeat;
 
@@ -14,7 +14,7 @@
   }
 
   @media (min-width: $width-tablet-album) {
-    background-image: url(../img/top-can-desktop@1x.jpg);
+    background-image: url(../img/top-can-desktop@1x.png);
     
     background-position: 170% 90%;
   }
