@@ -20,14 +20,14 @@
   @media (min-width: $width-tablet-album) {
     width: 512px;
     height: 512px;
-    max-width: 50%;
+    // max-width: 50%;
     margin-right: 40px;
   }
 
   @media (min-width: $width-desktop) {
     width: 585px;
     height: 585px;
-    max-width: 50%;
+    // max-width: 50%;
     margin-right: 40px;
   }
 }
