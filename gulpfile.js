@@ -63,7 +63,7 @@ const copyHtml = () => {
 };
 
 const copyImages = () => {
-  return src('src/img/**/*.{jpg,jpeg,png,svg}')
+  return src('src/img/**/*.{jpg,jpeg,png,svg,webp}')
     .pipe(dest('dist/img/'))
     .pipe(server.stream());
 };
