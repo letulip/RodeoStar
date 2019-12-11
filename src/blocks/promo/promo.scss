@@ -5,7 +5,7 @@
   position: relative;
   // overflow-y: hidden;
 
-  background-image: url(../img/top-can-mobile@1x.png);
+  background-image: url(../img/top-can-mobile@1x.jpg);
   background-position: 50% 80%;
   background-repeat: no-repeat;
 
@@ -14,7 +14,7 @@
   }
 
   @media (min-width: $width-tablet-album) {
-    background-image: url(../img/top-can-desktop@1x.png);
+    background-image: url(../img/top-can-desktop@1x.jpg);
     
     background-position: 170% 90%;
   }
@@ -87,7 +87,7 @@
 }
 
 // .promo__bg {
-//   background-image: url(../img/top-can-mobile@1x.png);
+//   background-image: url(../img/top-can-mobile@1x.jpg);
 //   background-position: center;
 //   height: 100%;
 //   width: 100%;
@@ -102,7 +102,7 @@
 //   }
 
 //   @media (min-width: $width-tablet-album) {
-//     background-image: url(../img/top-can-desktop@1x.png);
+//     background-image: url(../img/top-can-desktop@1x.jpg);
 //     top: -100px;
 //     right: -150px;
 //     background-position: center bottom;

@@ -19,16 +19,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url(../img/wedo-1@1x.png);
+  background: url(../img/wedo-1@1x.jpg);
   background-size: contain !important;
   background-repeat: no-repeat !important;
 
   @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-    background: url(../img/wedo-1@2x.png);
+    background: url(../img/wedo-1@2x.jpg);
   }
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background: url(../img/wedo-1@2x.png);
+    background: url(../img/wedo-1@2x.jpg);
   }
   
   @media (min-width: $width-mobile-album) {
@@ -53,65 +53,65 @@
 }
 
 .wedo__item--2 {
-  background: url(../img/wedo-2@1x.png);
+  background: url(../img/wedo-2@1x.jpg);
 
   @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-    background: url(../img/wedo-2@2x.png);
+    background: url(../img/wedo-2@2x.jpg);
   }
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background: url(../img/wedo-2@2x.png);
+    background: url(../img/wedo-2@2x.jpg);
   }
   // background-size: contain;
 }
 
 .wedo__item--3 {
-  background: url(../img/wedo-3@1x.png);
+  background: url(../img/wedo-3@1x.jpg);
 
   @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-    background: url(../img/wedo-3@2x.png);
+    background: url(../img/wedo-3@2x.jpg);
   }
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background: url(../img/wedo-3@2x.png);
+    background: url(../img/wedo-3@2x.jpg);
   }
 }
 
 .wedo__item--4 {
-  background: url(../img/wedo-4@1x.png);
+  background: url(../img/wedo-4@1x.jpg);
 
   @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-    background: url(../img/wedo-4@2x.png);
+    background: url(../img/wedo-4@2x.jpg);
   }
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background: url(../img/wedo-4@2x.png);
+    background: url(../img/wedo-4@2x.jpg);
   }
   // background-size: contain;
 }
 
 .wedo__item--5 {
-  background: url(../img/wedo-5@1x.png);
+  background: url(../img/wedo-5@1x.jpg);
 
   @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-    background: url(../img/wedo-5@2x.png);
+    background: url(../img/wedo-5@2x.jpg);
   }
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background: url(../img/wedo-5@2x.png);
+    background: url(../img/wedo-5@2x.jpg);
   }
   // background-size: contain;
 }
 
 .wedo__item--6 {
-  background: url(../img/wedo-6@1x.png);
+  background: url(../img/wedo-6@1x.jpg);
 
   @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-    background: url(../img/wedo-6@2x.png);
+    background: url(../img/wedo-6@2x.jpg);
   }
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background: url(../img/wedo-6@2x.png);
+    background: url(../img/wedo-6@2x.jpg);
   }
   // background-size: contain;
 }
