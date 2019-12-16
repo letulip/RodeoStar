@@ -54,15 +54,16 @@
 
 .content__article--advantages,
 .content__article--coop {
-  background-image: url(../img/advs-bg@1x.png);
-
-  @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-    background-image: url(../img/advs-bg@2x.png);
+  background-image: url(../img/advs-bg@1x.jpg);
+  
+  @media (min-resolution: $retina-2-dppx), (min-resolution: $retina-2-dpi) {
+    background-image: url(../img/advs-bg@2x.jpg);
   }
 
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background-image: url(../img/advs-bg@2x.png);
+  @media (min-resolution: $retina-3-dppx), (min-resolution: $retina-3-dpi) {
+    background-image: url(../img/advs-bg@2x.jpg);
   }
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover !important;
@@ -72,15 +73,33 @@
 }
 
 .content__article--coop {
-  // background-image: url(../img/coop-bg@1x.png);
-  // background: #0B0B21 0% 0% no-repeat padding-box, url('../img/coop-bg@1x.png');
-  background: url(../img/coop-bg@1x.png);
-
-  @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-    background: url(../img/coop-bg@2x.png);
+  // background-image: url(../img/coop-bg@1x.jpg);
+  // background: #0B0B21 0% 0% no-repeat padding-box, url('../img/coop-bg@1x.jpg');
+  background-image: url(../img/coop-bg@1x.jpg);
+  
+  @media (min-resolution: $retina-2-dppx), (min-resolution: $retina-2-dpi) {
+    background-image: url(../img/coop-bg@2x.jpg);
   }
 
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background: url(../img/coop-bg@2x.png);
+  @media (min-resolution: $retina-3-dppx), (min-resolution: $retina-3-dpi) {
+    background-image: url(../img/coop-bg@2x.jpg);
+  }
+}
+
+.content__article--sales {
+  // background-image: url(../img/coop-bg@1x.jpg);
+  // background: #0B0B21 0% 0% no-repeat padding-box, url('../img/coop-bg@1x.jpg');
+  background-image: url(../img/splash@1x.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  
+  @media (min-resolution: $retina-2-dppx), (min-resolution: $retina-2-dpi) {
+    background-image: url(../img/splash@2x.png);
+  }
+
+  @media (min-resolution: $retina-3-dppx), (min-resolution: $retina-3-dpi) {
+    background-image: url(../img/splash@2x.png);
   }
 }

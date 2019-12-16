@@ -1,26 +1,38 @@
 .promo {
-  // padding-top: $padding-mobile;
-  // padding-bottom: $padding-mobile;
   padding: $padding-mobile;
   position: relative;
-  // overflow-y: hidden;
 
-  background-image: url(../img/top-can-mobile@1x.png);
+  @media (min-width: $width-mobile ) {
+    background-image: url(../img/top-can-mobile@1x.png);
+
+    @media (min-resolution: $retina-2-dppx), (min-resolution: $retina-2-dpi) {
+      background-image: url(../img/top-can-mobile@2x.png);
+    }
+  
+    @media (min-resolution: $retina-3-dppx), (min-resolution: $retina-3-dpi) {
+      background-image: url(../img/top-can-mobile@3x.png);
+    }
+  }
+  
   background-position: 50% 80%;
   background-repeat: no-repeat;
+  background-size: contain;
 
   @media (min-width: $width-tablet) {
-    background-position: 90% 0%;
-  }
-
-  @media (min-width: $width-tablet-album) {
-    background-image: url(../img/top-can-desktop@1x.png);
-    
-    background-position: 170% 90%;
+    background-position: 100% -30px;
   }
 
   @media (min-width: $width-desktop) {
-    background-position: 90% 130%;
+    background-position: 90% -100px;
+    background-image: url(../img/top-can-desktop@1x.png);
+
+    @media (min-resolution: $retina-2-dppx), (min-resolution: $retina-2-dpi) {
+      background-image: url(../img/top-can-desktop@2x.png);
+    }
+  
+    @media (min-resolution: $retina-3-dppx), (min-resolution: $retina-3-dpi) {
+      background-image: url(../img/top-can-desktop@3x.png);
+    }
   }
 }
 
@@ -85,34 +97,6 @@
     max-width: $width-mobile-album-container;
   }
 }
-
-// .promo__bg {
-//   background-image: url(../img/top-can-mobile@1x.png);
-//   background-position: center;
-//   height: 100%;
-//   width: 100%;
-//   position: absolute;
-//   top: 150px;
-//   background-repeat: no-repeat;
-//   z-index: 0;
-
-//   @media (min-width: $width-tablet) {
-//     top: -100px;
-//     right: -150px;
-//   }
-
-//   @media (min-width: $width-tablet-album) {
-//     background-image: url(../img/top-can-desktop@1x.png);
-//     top: -100px;
-//     right: -150px;
-//     background-position: center bottom;
-//   }
-
-//   @media (min-width: $width-desktop) {
-//     right: -350px;
-//     // background-position: center bottom;
-//   }
-// }
 
 .promo__img {
   height: 475px;

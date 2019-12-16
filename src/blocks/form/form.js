@@ -1,23 +1,21 @@
 const body = document.querySelector(`body`);
-const overlay = body.querySelector(`.overlay`);
-const form = body.querySelector(`.form--promo`);
-const textarea = form.querySelector(`.form__input--textarea`);
-const textareaHidden = form.querySelector(`#form__input--textarea-hidden`);
-const telInput = form.querySelector(`.form__input--tel`);
-const getPriceSubmit = form.querySelector(`.button--getPrice-submit`);
+// const overlay = body.querySelector(`.overlay`);
 const getPrice = body.querySelectorAll(`.button--getPrice`);
+const callMe = body.querySelectorAll(`.button--callMe`);
+const formPrice = body.querySelector(`.form--price`);
+const formCallMe = body.querySelector(`.form--callMe`);
 
-if (textarea) {
-  textarea.addEventListener(`input`, () => {
+const addTextareaEventListener = (elementArea, elementAreaHidden) => {
+  elementArea.addEventListener(`input`, () => {
     let text = ``;
-    textarea.value.replace(/[<>]/g, `_`).split(`\n`).forEach((string) => {
+    elementArea.value.replace(/[<>]/g, `_`).split(`\n`).forEach((string) => {
       text += `<div>` + string.replace(/\s\s/g, ` &nbsp;`) + `&nbsp;</div>` + `\n`;
     });
-    textareaHidden.innerHTML = text;
+    elementAreaHidden.innerHTML = text;
     let height = textareaHidden.offsetHeight + 15;
-    textarea.style.height = height + `px`;
+    elementArea.style.height = height + `px`;
   });
-}
+};
 
 const telInputValidate = (input) => {
   const valids = [`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `0`, `(`, `)`, `+`, `-`, ` `];
@@ -26,44 +24,78 @@ const telInputValidate = (input) => {
 
   for (let i = 0; i < inputArray.length; i++) {
     if (!valids.includes(inputArray[i])) {
-      telInput.setCustomValidity(`Используйте цифры и ( ) + -`);
+      input.target.setCustomValidity(`Используйте цифры и ( ) + -`);
       return;
     } else {
-      telInput.setCustomValidity(``);
-    }
-    
+      input.target.setCustomValidity(``);
+    } 
   }
-
 };
 
-if (telInput) {
-  telInput.addEventListener(`input`, telInputValidate);
-}
-
-const formClose = () => {
-  overlay.removeEventListener(`click`, formClose);
-  overlay.style.display = `none`;
+const formClose = (formElement, overlay) => {
+  overlay.remove();
   body.style.overflow = `auto`;
-  form.style.display = `none`;
-  form.removeEventListener(`submit`, formSubmitEventListener);
-}
+  if (formElement) {
+    formElement.style.display = `none`;
+  }
+  
+};
 
-const formSubmitEventListener = (evt) => {
-  // evt.preventDefault();
-  // console.log(form.action);
-  formClose();
-}
+const formSubmitEventListener = (formElement) => {
+  formClose(formElement);
+};
 
-const formOpen = () => {
-  overlay.style.display = `block`;
-  overlay.addEventListener(`click`, formClose);
+const addFormEventListeners = (formElement) => {
+  const textarea = formElement.querySelector(`.form__input--textarea`);
+  const telInput = formElement.querySelector(`.form__input--tel`);
+
+  if (textarea) {
+    const textareaHidden = formElement.querySelector(`#form__input--textarea-hidden`);
+    addTextareaEventListener(textarea, textareaHidden);
+  }
+
+  if (telInput) {
+    telInput.addEventListener(`input`, telInputValidate);
+  }
+
+  formElement.addEventListener(`submit`, formSubmitEventListener);
+  return formElement;
+};
+
+const createOverlay = (formElement) => {
+  const overlay = document.createElement(`div`);
+  overlay.classList.add(`overlay`);
+  overlay.addEventListener(`click`, () => {
+    formClose(formElement, overlay);
+  });
+  body.appendChild(overlay);
+};
+
+const formOpen = (formElement) => {
+  createOverlay(formElement);
   body.style.overflow = `hidden`;
-  form.style.display = `block`;
-  form.addEventListener(`submit`, formSubmitEventListener);
+
+  formElement.style.display = `block`;
+
+  addFormEventListeners(formElement);
+};
+
+const openPriceForm = () => {
+  formOpen(formPrice);
+};
+
+const openCallMeForm = () => {
+  formOpen(formCallMe);
+};
+
+if (getPrice && formPrice) {
+  getPrice.forEach((button) => {
+    button.addEventListener(`click`, openPriceForm);
+  })
 }
 
-if (getPrice) {
-  getPrice.forEach((button) => {
-    button.addEventListener(`click`, formOpen);
+if (callMe && formCallMe) {
+  callMe.forEach((button) => {
+    button.addEventListener(`click`, openCallMeForm);
   })
 }
