@@ -2,7 +2,6 @@
   background-image: none;
   padding-top: 0;
   padding-bottom: 0;
-  position: relative;
   min-height: 500px;
 
   @media (min-width: $width-mobile-album) {
@@ -12,6 +11,7 @@
   @media (min-width: $width-tablet) {
     background-image: none;
     height: calc(100vh - 348px);
+    display: flex;
   }
 
   @media (min-width: $width-tablet-album) {
@@ -28,17 +28,16 @@
 .contacts__wrapper {
   margin-bottom: 0;
   height: 330px;
-  background-image: linear-gradient(to right, $main-theme-color, $main-theme-color2);
+  background-color: $main-theme-color;
   z-index: 1;
   text-align: center;
   
   @media (min-width: $width-tablet) {
-    position: absolute;
-    padding-left: $padding-mobile;
+    padding-left: $padding-tablet;
     text-align: left;
     min-height: 500px;
     height: 100%;
-    width: 330px;
+    width: 400px;
     left: 50px;
   }
 
@@ -50,6 +49,8 @@
   }
 
   @media (min-width: $width-desktop) {
+    padding-left: $padding-desktop;
+    padding-right: $padding-desktop;
     min-height: 500px;
   }
 }
@@ -58,11 +59,10 @@
 }
 
 .contacts__map {
-  min-height: 500px;
+  min-height: 400px;
   opacity: .8;
 
   @media (min-width: $width-tablet) {
-    position: absolute;
     z-index: 0;
     top: 0;
   }

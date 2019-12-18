@@ -278,6 +278,7 @@
         <input type="email" class="form__input" id="form_email" name="form_email" placeholder="ivan.ivanov@mail.ru" required>
       </label>
       {% module xsrf_form_html() %}
+      <input type="hidden" id="form_price" name="form_price">
       <button class="button button--action button--center button--submit" type="submit">Получить прайс</button>
     </fieldset>
   </form>
@@ -293,6 +294,7 @@
         <input type="tel" class="form__input form__input--tel" id="form_phone" name="form_phone" placeholder="+7(999)123-1415" required>
       </label>
       {% module xsrf_form_html() %}
+      <input type="hidden" id="form_callme" name="form_callme">
       <button class="button button--action button--center button--submit" type="submit">Перезвоните мне</button>
     </fieldset>
   </form>
