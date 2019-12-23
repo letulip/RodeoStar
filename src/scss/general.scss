@@ -142,10 +142,10 @@ body {
 }
 
 .logo {
-  @media (min-width: $width-tablet) {
-    width: 90px;
-    height: 110px;
-  }
+  // @media (min-width: $width-tablet) {
+  //   width: 90px;
+  //   height: 110px;
+  // }
 
   @media (min-width: $width-tablet-album) {
     width: 124px;
